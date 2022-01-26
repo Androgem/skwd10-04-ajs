@@ -1,0 +1,28 @@
+# Exercises 
+## Student constructor function
+* Create a constructor function for Student objects with:
+  * Properties:
+    * firstName
+    * lastName
+    * birthYear
+    * academy 
+    * grades - array of numbers
+  * Methods:
+    * getAge() - returns age of student
+    * getInfo() - returns "This is student firstName* lastName* from the academy academy*!"
+    * getGradesAverage() - returns the average of the student grades
+* Create an array with 3 students
+
+## Create a student registry page
+
+* Create an HTML page with student registry form with
+  * First Name
+  * Last Name
+  * Age
+  * Email
+* Create a student generator function
+* When the form is submitted, the inputs should be compiled into a new object from the generator function Student
+* Validate that input was entered in all fields
+* This student should be added to a list called "database"
+* After adding a student the database should be printed in the console
+* The input fields should be cleared
