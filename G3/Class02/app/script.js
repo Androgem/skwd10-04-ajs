@@ -91,6 +91,43 @@ let booksService = {
             }
         }
         return filteredBooks;
+    },
+
+    searchByAuthor: function (author, books) {
+        let filteredBooks = [];
+        for (let index = 0; index < books.length; index += 1) {
+            let book = books[index];
+            if (book.author.toLowerCase().includes(author.toLowerCase())) {
+                filteredBooks.push(book);
+            }
+        }
+        return filteredBooks;
+    },
+
+    searchByYear: function (books, fromYear, toYear = new Date().getFullYear()) {
+        let filteredBooks = [];
+        for (let book of books) {
+            if (book.year >= parseInt(fromYear) && book.year <= parseInt(toYear)) {
+                filteredBooks.push(book);
+            }
+        }
+        return filteredBooks;
+    },
+
+    handleInfoMessage: function (message, isError = false) {
+        let infoMessage = document.getElementById('info-message');
+        infoMessage.innerText = '';
+        infoMessage.innerText = message;
+
+        infoMessage.style.color = isError ? 'red' : 'green';
+
+        this.clearMessageText(infoMessage);
+    },
+
+    clearMessageText: function (htmlElement) {
+        setTimeout(function () {
+            htmlElement.innerText = '';
+        }, 2000);
     }
 }
 
@@ -121,7 +158,9 @@ document
         let isAdded = booksDb.addBook(book);
         if (isAdded) {
             // show information message if the book is added
+            booksService.handleInfoMessage(`Successfuly added book ${book.title}`);
         } else {
+            booksService.handleInfoMessage(`An error has occured while trying to add book`, true);
             // show information message if the book is added
         }
         booksService.showBooks(booksDb.getBooks(), showItemsList);
@@ -134,6 +173,7 @@ document
         let book = booksDb.getBookById(id);
         if (!book) {
             // show information message
+            booksService.handleInfoMessage(`Book with id ${id} was not found`, true);
         } else {
             book.changeAvailability();
         }
@@ -147,8 +187,10 @@ document
         let book = booksDb.deleteBook(id);
         if (book) {
             // show information message
+            booksService.handleInfoMessage(`Successfuly deleted book ${book.title}`);
         } else {
             // show information message
+            booksService.handleInfoMessage(`An error has occured while trying to delete book`, true);
         }
         booksService.showBooks(booksDb.getBooks(), showItemsList);
     });
@@ -161,7 +203,44 @@ document
             .searchAuthorByLetter(searchByLetter, booksDb.getBooks());
         if (filteredBooks.length === 0) {
             // show information message
+            booksService.handleInfoMessage(`No books were found with ${searchByLetter} phrase`, true);
             return;
         }
         booksService.showBooks(filteredBooks, showItemsList);
+    });
+
+document
+    .getElementById('search-btn')
+    .addEventListener('click', function () {
+        let searchInput = document.getElementById('search').value;
+        let filteredBooks = booksService
+            .searchByAuthor(searchInput, booksDb.getBooks());
+        if (filteredBooks.length === 0) {
+            // show information message
+            booksService.handleInfoMessage(`No books were found with ${searchInput} phrase`, true);
+        } else {
+            booksService.showBooks(filteredBooks, showItemsList);
+        }
+    });
+
+document
+    .getElementById('year-btn')
+    .addEventListener('click', function () {
+        let from = document.getElementById('year-from').value;
+        let to = document.getElementById('year-to').value;
+        let filteredBooks = [];
+        if (to) {
+            filteredBooks = booksService.searchByYear(booksDb.getBooks(), from, to);
+        } else {
+            filteredBooks = booksService.searchByYear(booksDb.getBooks(), from);
+        }
+        // let filteredBooks = to ? booksService.searchByYear(booksDb.getBooks(), from, to) : booksService.searchByYear(booksDb.getBooks(), from);
+
+        if (filteredBooks.length === 0) {
+            // show information message
+            let toMessage = to ? `to ${to}` : `to ${new Date().getFullYear()}`;
+            booksService.handleInfoMessage(`No books were found from ${from} ${toMessage}`, true);
+        } else {
+            booksService.showBooks(filteredBooks, showItemsList);
+        } 
     });
