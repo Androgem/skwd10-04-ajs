@@ -69,3 +69,11 @@ fetch("https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/main/Sampl
     console.log("THIS IS FROM THE FETCH");
     console.log(response);
 });
+
+
+$.ajax({
+    url: "https://www.boredapi.com/api/activity?participants=3",
+    success: function(response) {
+        console.log(response)
+    }
+})
