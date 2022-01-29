@@ -77,3 +77,11 @@ $.ajax({
         console.log(response)
     }
 })
+
+$.ajax({
+    url: "https://dog.ceo/api/breeds/image/random",
+    success: function (response) {
+        console.log(response.message)
+        $("#dog").html(`<img src="${response.message}">`)
+    }
+})
