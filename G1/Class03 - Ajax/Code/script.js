@@ -61,3 +61,11 @@ function printNames(people) {
     }
     ul.html(html);
 }
+
+fetch("https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/main/Samples/students.json")
+.then(function(response) {
+    return response.json();
+}).then(function(response) {
+    console.log("THIS IS FROM THE FETCH");
+    console.log(response);
+});
