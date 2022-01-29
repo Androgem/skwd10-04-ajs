@@ -1,0 +1,5 @@
+{
+    "name": "test",
+    "surname": "value",
+    "array": ["10", 2, 4, true]
+}
