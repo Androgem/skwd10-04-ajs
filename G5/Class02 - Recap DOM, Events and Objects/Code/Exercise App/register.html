@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Student Registry App</title>
+</head>
+
+<body>
+    <div class="container" style="max-width: 500px;">
+        <p>Students Registry App</p>
+        <br><br>
+    </div>
+
+    <div class="container" style="max-width: 500px;">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName">
+
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName">
+
+        <label for="emailAddress" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp">
+
+        <label for="age" class="form-label">Age</label>
+        <input type="text" class="form-control" id="age">
+        <br>
+        <button id="submitBtn" class="btn btn-primary">Register</button>
+    </div>
+
+<br><br>
+
+    <div id="resultContainer" class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="col">First Name</th>
+                    <th class="col">Last Name</th>
+                    <th class="col">Email</th>
+                    <th class="col">Age</th>
+                </tr>
+            </thead>
+            <tbody id="resultOutput">
+               
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./register.js"></script>
+</body>
+
+</html>
