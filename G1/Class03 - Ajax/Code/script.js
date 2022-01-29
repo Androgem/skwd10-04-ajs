@@ -27,3 +27,37 @@ xhr.open('GET', 'https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/
 xhr.send();
 
 console.log("APP HAS ENDED");
+
+$.ajax({
+    url: "https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/main/Samples/students.json",
+    method: "GET",
+    success: function (response) {
+        console.log("this is from ajax");
+        console.log(response)
+        var objResponse = JSON.parse(response);
+        console.log(objResponse);
+    },
+    error: function (e) {
+        console.log(e);
+    }
+});
+
+$("button").click(function() {
+    $.ajax({
+        url: "http://api.open-notify.org/astros.json",
+        success: function(response) {
+            console.log(response.people);
+            printNames(response.people);
+        }
+    });
+});
+
+function printNames(people) {
+    let ul = $("ul");
+    let html = "";
+    for (let person of people) {
+        console.log(person);
+        html += `<li>${person.name}</li>`;
+    }
+    ul.html(html);
+}
