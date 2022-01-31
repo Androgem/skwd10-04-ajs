@@ -61,3 +61,21 @@ function sayHello(inputName){
 	})(inputName)
 }
 console.log(sayHello("Bob"));
+
+function sumTo(num) {
+    if(num === 0) {
+        return 0
+    }
+    return num + sumTo(num - 1)
+}
+console.log(sumTo(5));
+
+function countDown(num) {
+    if (num == 0) {
+        console.log("Srekjna Nova Godina");
+    } else {
+        console.log(num);
+        countDown(num - 1);
+    }
+}
+countDown(10);
