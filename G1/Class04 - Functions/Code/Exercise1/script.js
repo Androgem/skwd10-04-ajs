@@ -1,6 +1,4 @@
-function countDigits(num) {
-    return Math.abs(num).toString().length; // - (num < 0);
-}
+var countDigits = num => Math.abs(num).toString().length; // - (num < 0);
 
 function evenOdd(num) {
     return num % 2 === 0 ? 'even' : 'odd';

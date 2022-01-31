@@ -36,3 +36,7 @@ testArrow();
 var sumWith10 = (num) => num + 10;
 var sum = sumWith10(5);
 console.log(sum);
+
+var arr = [1 , "test", function(num){return 30 - num}];
+// var arr = [1 , "test", num => 30 - num]; <-- arrow function
+console.log(arr[2](10));
