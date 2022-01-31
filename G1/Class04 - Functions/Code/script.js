@@ -17,3 +17,26 @@ function printPersonDetails(firstName, lastName, age, address){
 }
 
 console.log(printPersonDetails("Jon", "Doe", 30, "test"));
+
+var hi = function (name) {
+    console.log("Hello " + name);
+}
+var hi2 = (name) => console.log("Hello from arrow " + name); 
+hi("Bob");
+hi2("Bob");
+var h1 = document.getElementsByTagName("h1")[0];
+h1.addEventListener("click", (e) => console.log(e.target));
+
+var testArrow = () => {
+    var result = 2 + 5;
+    console.log(result);
+}
+testArrow();
+
+var sumWith10 = (num) => num + 10;
+var sum = sumWith10(5);
+console.log(sum);
+
+var arr = [1 , "test", function(num){return 30 - num}];
+// var arr = [1 , "test", num => 30 - num]; <-- arrow function
+console.log(arr[2](10));
