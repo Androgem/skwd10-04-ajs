@@ -2,33 +2,52 @@ var peopleBtn = document.getElementById("peopleBtn");
 var shipsBtn = document.getElementById("shipsBtn");
 var tableHeader = document.getElementsByTagName("thead")[0];
 var tableBody = document.getElementsByTagName("tbody")[0];
+var next =$("#next");
+var previous = $("#previous");
+
+next.hide();
+previous.hide();
 
 var peopleHeader = ["Name", "Height ( cm )", "Mass ( kg )", "Gender", "Birth Year", "Appearances"];
 var shipsHeader = ["Name", "Model", "Manufacturer", "Cost", "People Capacity", "Class"];
 var baseURL = "https://swapi.dev/api/";
+var counter = 1;
+var type = "";
 
 peopleBtn.addEventListener("click", function() {
-    getPeople();
+    type = "people";
+    counter = 1;
+    getPeople(1);
 });
 
 shipsBtn.addEventListener("click", function() {
-    getShips();
+    type = "ships";
+    counter = 1;
+    getShips(1);
 });
 
-function getPeople() {
+next.click(function() {
+    counter++;
+    type === "people" ? 
+    getPeople(counter) : getShips(counter);
+})
+
+function getPeople(pageNumber) {
     $.ajax({
-        url: `${baseURL}people?page=1`,
+        url: `${baseURL}people?page=${pageNumber}`,
         success: function(response) {
             generatePeopleData(response.results);
+            response.next ? next.show() : next.hide();
         }
     })
 }
 
-function getShips() {
+function getShips(pageNumber) {
     $.ajax({
-        url: `${baseURL}starships?page=1`,
+        url: `${baseURL}starships?page=${pageNumber}`,
         success: function(response) {
-            generateShipData(response.results);
+            generateShipData(response.results); 
+            response.next ? next.show() : next.hide();
         }
     })
 }
