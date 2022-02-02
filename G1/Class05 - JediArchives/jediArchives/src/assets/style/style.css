@@ -8,3 +8,11 @@ body {
 .imgBtn {
     width: 60%;
 }
+
+table {
+    color: yellow;
+}
+
+thead {
+    font-size: 20px;
+}
