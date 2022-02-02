@@ -1,0 +1,20 @@
+Homework #1
+
+*Create a button in HTML. And when the button is clicked it should create API Call.
+*API call URL = https://thronesapi.com/api/v2/Characters/2
+*It will return informations about John Snow :D 
+*Print in HTML following properties: firstName, lastName, fullName, title, family and it's image ;)
+
+Homework #2
+
+*Create a button in HTML. When clicked it should fetch the continents in GOT World :D 
+*API call URL = https://thronesapi.com/api/v2/Continents
+*This url will return the names of the continents in GOT World
+*Print the name of the continent in the HTML in a table.
+
+
+BONUS: 
+*Create a button in HTML and when clicked it should get all the characters in GOT
+*API call URL = https://thronesapi.com/api/v2/Characters
+*Print in HTML following properties for every character: firstName, lastName, fullName, title, family and it's image
+** REUSE the function from the first homework exercise =)
