@@ -1,0 +1,34 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small {
+    height: 30vh;
+}
+
+
+.medium {
+    height: 40vh;
+}
+
+.imgBtn {
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#loader {
+    height: 15vh;
+    display: none;
+}
+
+
+#nextBtn, #prevBtn {
+    display: none;
+}
