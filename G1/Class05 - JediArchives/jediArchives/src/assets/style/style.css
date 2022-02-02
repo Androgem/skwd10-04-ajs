@@ -1,0 +1,10 @@
+body {
+    background-color: black;
+}
+#logo {
+    width: 40%;
+    margin-top: 40px;
+}
+.imgBtn {
+    width: 60%;
+}
