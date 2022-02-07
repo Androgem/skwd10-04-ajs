@@ -46,3 +46,18 @@ let greetWithName = showMessage(document.getElementById('name'), 'm');
 //greetWithName('Nikola');
 
 greetWithName('Bob');
+
+function setOfFunctions() {
+    return {
+        sum: function (a, b) {
+            return a + b;
+        },
+        multiply: (a, b) => a * b
+    }
+}
+
+let arithmeticOperations = setOfFunctions();
+
+let fnc = function () {
+    return 3;
+}
