@@ -94,23 +94,37 @@ let sum = 0;
 for (let num of numbers2) {
     sum += num;
 }
-console.log(sum);
+// console.log(sum);
 
 let reduceSum = numbers2.reduce((prev, curr) => prev += curr, 0);
-console.log(reduceSum);
+// console.log(reduceSum);
 
 let sumGrades = students.reduce((secondReduceParameter, student) => secondReduceParameter += student.grade, 0); // secondReduceParameter = 0 the zero after the comma
-console.log(sumGrades);
+// console.log(sumGrades);
 
 let someObj = students.reduce((prev, curr) => {
     prev[curr.firstName] = curr.age;
     return prev;
 }, {})
-console.log(someObj);
+// console.log(someObj);
 
 let someArr = students.reduce((prev, curr) => {
     prev.push(`${curr.firstName} ${curr.lastName}`);
     return prev;
 }, []);
 
-console.log(someArr);
+// console.log(someArr);
+
+let numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 2, 2, 1, 2, 10, 11, 22, 12, 33];
+
+let sortedAscending = numbers3.sort((a, b) => a - b);
+console.log(sortedAscending);
+let sortedDesc = numbers3.sort((a, b) => b - a);
+console.log(sortedDesc);
+let sorter = numbers3.sort();
+console.log(sorter);
+
+let sortedStudentsAscending = students.sort((student1, student2) => student1.firstName.localeCompare(student2.firstName));
+console.log(sortedStudentsAscending);
+let sortedStudentsDesc = students.sort((student1, student2) => student2.firstName.localeCompare(student1.firstName));
+console.log(sortedStudentsDesc);
