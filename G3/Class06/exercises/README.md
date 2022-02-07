@@ -10,5 +10,5 @@ There is a JSON file with students. Make a call to the file and get the followin
 * All male students with a name starting with B and average grade over 2
 
 Use higher order functions to find the answers
-**Link:** https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/main/Samples/students_v2.json
+**Link:** https://raw.githubusercontent.com/sedc-codecademy/skwd10-04-ajs/main/G3/Class06/exercises/students.json
 
