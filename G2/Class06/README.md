@@ -371,24 +371,7 @@ function increaseByOne(numbers) {
 }
 ```
 
-## What is strict typing in JavaScript?
 
-Javascript lets us do all sorts of magic things. But some might say it is too flexible of a language. For this reason, for securing our code from ourselves and our mistakes as developers, something that is called **strict** typing exists. We tell at the start of our script or the start of a function **'use strict';**. With this, some extra rules are applied to your javascript code. Some of those are:
-
-* Not allowed to pass value to an undeclared variable
-* Not allowing to delete variables, functions, or objects
-* Not allowing declaring two parameters of a function with the same name
-* Some extra names are not allowed to be used as variables ( are reserved for the language itself)
-
-```javascript
-'use strict';
-// These lines of code will throw an error if we use strict
-number = 15; // no declaration
-delete number; // cant delete stuff
-function sum(num1, num1){ return num1 + num1 }; // same parameter names
-let eval = 5; // cant use keyword eval
-let arguments = 2; // cant use ketworkd arguments
-```
 
 ## Extra materials 📘
 * [First class functions](https://medium.freecodecamp.org/discover-the-power-of-first-class-functions-fd0d7b599b69)
