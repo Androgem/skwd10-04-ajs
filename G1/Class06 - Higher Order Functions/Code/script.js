@@ -1,66 +1,73 @@
-// const num = 3;
-// function multiplyBy2(inputNumber) {
-//   const result = inputNumber * 2;
-//   return result;
-// }
-// const output = multiplyBy2(num);
-// const newOutput = multiplyBy2(10);
+const num = 3;
+function multiplyBy2(inputNumber) {
+  const result = inputNumber * 2;
+  return result;
+}
+const output = multiplyBy2(num);
+const newOutput = multiplyBy2(10);
 
-// function tenSquared() {
-//   return 10*10;
-// }
+function tenSquared() {
+  return 10*10;
+}
 
-// function nineSquared() {
-//   return 9*9;
-// }
-
+function nineSquared() {
+  return 9*9;
+}
 // DRY - DONT REPEAT YOURSELF
 
-// function squereNum(num) {
-//   return num * num;
-// }
+function squereNum(num) {
+  return num * num;
+}
 
-// function copyArrayAndMultiplyBy2(array) {
-//   const output = [];
-//   for (let i = 0; (i = array.length); i++) {
-//     output.push(array[i] * 2);
-//   }
-//   return output;
-// }
+// DRY - DONT REPEAT YOURSELF
+function copyArrayAndMultiplyBy2(array) {
+  const output = [];
+  for (let i = 0; (i = array.length); i++) {
+    output.push(array[i] * 2);
+  }
+  return output;
+}
 
-// const myArray = [1, 2, 3];
-// const result = copyArrayAndMultiplyBy2(myArray);
+const myArray = [1, 2, 3];
+const result = copyArrayAndMultiplyBy2(myArray);
 
-// function copyArrayAndDivideBy2(array) {
-//   const output = [];
-//   for (let i = 0; (i = array.length); i++) {
-//     output.push(array[i] / 2);
-//   }
-//   return output;
-// }
+// DRY - DONT REPEAT YOURSELF
+function copyArrayAndDivideBy2(array) {
+  const output = [];
+  for (let i = 0; (i = array.length); i++) {
+    output.push(array[i] / 2);
+  }
+  return output;
+}
 
-// const myArray = [1, 2, 3];
-// const result = copyArrayAndDivideBy2(myArray);
+const myArray = [1, 2, 3];
+const result = copyArrayAndDivideBy2(myArray);
 
-// function copyArrayAndManipulate(array, instructions) {
-//   const output = [] // [2,];
-//   for (let i = 0; i < array.length; i++) {
-//     output.push(instructions(array[i]));
-//   }
-//   return output;
-// }
+/* 
+  ** Higher Order Functions
+  ** The outher function that takes in a function  
+  ** Generalize our function - So we pass in our specific instructions only when we run coppyArrayAndManipulate
+*/
+function copyArrayAndManipulate(array, instructions) {
+  const output = [] // [2,];
+  for (let i = 0; i < array.length; i++) {
+    output.push(instructions(array[i]));
+  }
+  return output;
+}
 
-// function multiplyBy2(input) {
-//   return input * 2;
-// }
+function multiplyBy2(input) {
+  return input * 2;
+}
 
-// function divideBy2(input) {
-//   return input * 2;
-// }
+function divideBy2(input) {
+  return input * 2;
+}
 
-// const myArray = [1, 2, 3];
-// const result = copyArrayAndManipulate(myArray, multiplyBy2);
-// const newOutput = copyArrayAndManipulate(myArray, divideBy2);
+const myArray = [1, 2, 3];
+
+const result = copyArrayAndManipulate(myArray, multiplyBy2);
+const newOutput = copyArrayAndManipulate(myArray, divideBy2);
 
 const companies = [
   { name: 'Company One', category: 'Finance', start: 1981, end: 2004 },
@@ -99,6 +106,9 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 //   }
 // });
 
+/* 
+** 1-Liner
+*/
 const canDrink = ages.filter((age) => age >= 18);
 
 // const retailCompanies = companies.filter(function (company) {
@@ -107,10 +117,16 @@ const canDrink = ages.filter((age) => age >= 18);
 //   }
 // });
 
+/* 
+** 1-Liner
+*/
 const retailCompanies = companies.filter(
   (company) => company.category === 'Retail'
 );
 
+/* 
+** 1-Liner
+*/
 const eightiesCompanies = companies.filter(
   (company) => company.start >= 1980 && company.end < 1990
 );
@@ -120,6 +136,9 @@ const eightiesCompanies = companies.filter(
 //   return company.name;
 // });
 
+/* 
+** 1-Liner
+*/
 const companyNames = companies.map((company) => company.name);
 
 // const ageMap = ages
@@ -136,6 +155,9 @@ const companyNames = companies.map((company) => company.name);
 //   }
 // });
 
+/* 
+** 1-Liner
+*/
 const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
 
 const url =
