@@ -136,4 +136,47 @@ function other() {
     console.log("The last jedi");
 }
 
-makeCall1("https://swapi.dev/api/people/1/", print, printError, other);
+// makeCall1("https://swapi.dev/api/people/1/", print, printError, other);
+
+
+
+
+// setTimeout(() => {
+//     console.log("First");
+//     setTimeout(() => {
+//         console.log("Second");
+//         setTimeout(() => {
+//             console.log("Third");
+//             setTimeout(() => {
+//                 console.log("Fourth");
+//                 setTimeout(() => {
+//                     console.log("Fifth");
+//                     setTimeout(() => {
+//                         console.log("A");
+//                     }, 2000);
+//                     setTimeout(() => {
+//                         console.log("B");
+//                     }, 1800);
+//                 }, 5000);
+//             }, 500);
+//         }, 1000);
+//     }, 2000);
+// }, 1000);
+
+
+
+let div = document.getElementById('main');
+let h3 = document.getElementById('h3');
+
+let i = 20;
+let intval = setInterval(() => {
+    i += 5;
+    // div.style.marginLeft = `${i}px`;    
+    div.style.width = `${i}px`;    
+}, 300);
+
+let colorChange = false;
+setInterval(() => {
+    h3.style.color = colorChange ? "red" : "black";
+    colorChange = !colorChange;
+}, 100);
