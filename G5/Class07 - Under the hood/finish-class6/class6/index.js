@@ -14,10 +14,47 @@ let myCarsArray = [
 //   myCarsArray.sort((car1, car2) => car1.model.localeCompare(car2.model))
 // );
 
-let sortedByNameLength = myCarsArray.sort(
-  (car1, car2) => car1.model.length - car2.model.length
+// let sortedByNameLength = myCarsArray.sort(
+//   (car1, car2) => car1.model.length - car2.model.length
+// );
+
+// console.log("Sorted by model name length", sortedByNameLength);
+// console.log("Original array", myCarsArray);
+// Original sorted why amigo? :///
+
+// Still not solution
+
+// let copiedMyCarsArray = myCarsArray;
+
+// let sortedCopiedArrayByNameLength = copiedMyCarsArray.sort(
+//   (car1, car2) => car1.model.length - car2.model.length
+// );
+
+// console.log("Copied array", copiedMyCarsArray);
+// console.log("Original array", myCarsArray);
+// console.log("Sorted with copy", sortedCopiedArrayByNameLength);
+
+// SOLUTION
+
+function copyArray(array) {
+  let copiedArray = [];
+  array.forEach((element) => copiedArray.push(element));
+  return copiedArray;
+}
+
+let copiedMyCarsSolution = copyArray(myCarsArray);
+
+let sortedCopiedArray = copiedMyCarsSolution.sort(
+  (a, b) => a.model.length - b.model.length
 );
 
-console.log("Sorted by model name length", sortedByNameLength);
+console.log("Copied array", copiedMyCarsSolution);
 console.log("Original array", myCarsArray);
-// Original sorted :///
+console.log("Sorted with copy", sortedCopiedArray);
+
+// Primitive Data Types: Number, String, Boolean, undefined and NULL
+// Complex Data Types: Objects, function or array, etc
+
+// So here comes the interesting part is, Only Primitive types can be Passed by Value but not Complex types,
+// which can be passed by reference only. Technically, Pass by Reference is present in JavaScript. When variables hold an object,
+// an array of a function which is complex types passes by Reference comes into picture where variable holds the
