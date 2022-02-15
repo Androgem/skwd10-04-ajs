@@ -67,6 +67,25 @@ function createElem(e) {
     return document.createElement(e);
 }
 
+
+let firstChoice = 0;
+let secondChoice = 1;
+
+// with OR operator
+let result = firstChoice || secondChoice;
+if(firstChoice) {
+    result = firstChoice
+} else {
+    result = secondChoice
+}
+
+// with AND operator
+if(firstChoice) {
+    result = secondChoice
+} else {
+    result = firstChoice
+}
+
 ($ => {
     const loadBtn = $('#loadBtn');
     const previous = $('#previous');
