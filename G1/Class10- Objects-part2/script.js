@@ -271,3 +271,27 @@ student4.attendAdobeExam();
 const student5 = new NetworkStudent('Igor', 23, 'Igorovski', 32, 2, 'SEDC');
 console.log(student5);
 student5.attendCiscoExam();
+
+class Workshop {
+  constructor(teacher, subject) {
+    this.teacher = teacher;
+    this.subject = subject;
+    this.ask = (question) => console.log(`${this.teacher} - ${question}`);
+  }
+}
+
+const wshop1 = new Workshop('Dimitar', 'JavaScript');
+const wshop2 = new Workshop('Pece', 'HTML');
+wshop1.ask('What is JavaScript?');
+wshop2.ask('What is HTML ?');
+
+class AnotherWorkshop extends Workshop {
+  speakUp(msg) {
+    console.log(msg);
+  }
+}
+
+const wshop3 = new AnotherWorkshop('Anita', 'Advanced JS');
+// wshop3.ask('What is c++ ?');
+wshop3.speakUp('What is C# ?');
+console.log(wshop3);
