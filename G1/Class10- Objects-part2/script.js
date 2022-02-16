@@ -182,10 +182,92 @@ const car1 = new Car(1, 'B52', 40000, 'BMW', 5, 50);
 const car2 = new Car(2, 'B53', 20000, 'Audi', 2, 40);
 const boat1 = new Boat(1, 'B54', 200, 'Klimes boat', 4);
 const boat2 = new Boat(1, 'B55', 200, 'Klimes boat1', 5);
-console.log(boat1);
+// console.log(boat1);
 boat1.totalGuests();
 boat1.startEngine();
 boat1.printVehicle();
 car1.drift();
-console.log(car1);
-console.log(car2);
+// console.log(car1);
+// console.log(car2);
+
+/**
+ * Exercise 1
+ */
+
+function Person(firstName, lastName, age) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.getFullName = function () {
+    return `${firstName + ' ' + lastName}`;
+  };
+}
+
+function Student(firstName, lastName, age, academyName, studentId) {
+  Object.setPrototypeOf(this, new Person(firstName, lastName, age));
+  this.academyName = academyName;
+  this.studentId = studentId;
+  this.study = function () {
+    return `${this.firstName} is studying in the ${this.academyName}`;
+  };
+}
+
+const student1 = new Student('Dimitar', 'Chetelev', 27, 'SEDC', 1);
+const student2 = new Student('Petar', 'Petrovski', 25, 'SEDC', 2);
+console.log(student1);
+console.log(student2);
+
+console.log(student1.study());
+console.log(student2.study());
+
+/**
+ * Exercise 2
+ */
+
+Person.prototype.checkForAcademy = function (student) {
+  console.log(student.academyName);
+};
+
+function CodeStudent(id, firstName, lastName, age) {
+  Object.setPrototypeOf(
+    this,
+    new Student(firstName, lastName, age, id, 'Code')
+  );
+  this.hasIndividualProject = false;
+  this.hasGroupProject = false;
+  this.doProject = function (type) {
+    if (type === 'individual') {
+      this.hasIndividualProject = true;
+    }
+    if (type === 'group') {
+      this.hasGroupProject = true;
+    }
+  };
+}
+
+function DesignStudent(first, sOfMonth, id, last, age, academyName) {
+  Object.setPrototypeOf(this, new Student(first, last, age, academyName, id));
+  this.sOfMonth = sOfMonth;
+  this.attendAdobeExam = function () {
+    console.log(`This student ${this.firstName} is taking an adobe exam!`);
+  };
+}
+
+function NetworkStudent(first, id, last, age, part, academyName) {
+  Object.setPrototypeOf(this, new Student(first, last, age, academyName, id));
+  this.academyPart = part;
+  this.attendCiscoExam = function () {
+    console.log(`This student ${this.firstName} is taking an cisco exam!`);
+  };
+}
+
+const student3 = new CodeStudent(25, 'Dimitar', 'Chetelev', 27, 'SEDC');
+student3.doProject('individual');
+
+const student4 = new DesignStudent('Petar', true, 5, 'Petrovski', 20, 'SEDC');
+console.log(student4);
+student4.attendAdobeExam();
+
+const student5 = new NetworkStudent('Igor', 23, 'Igorovski', 32, 2, 'SEDC');
+console.log(student5);
+student5.attendCiscoExam();
