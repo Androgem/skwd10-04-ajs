@@ -20,4 +20,4 @@ _All of the above steps should be done in order_
 
 _As always any questions or struggles please contact us, ask us at class or send us an email, this homework is very important and we expect a large percentage of you to finish it_
 
-\_\_The due date for this homework is the _24th of February_\_ \_
+\_\_The due date for this homework is the **24th of February** \_ \_
