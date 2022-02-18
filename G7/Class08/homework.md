@@ -17,7 +17,8 @@ _All of the above steps should be done in order_
 
 9. Sort the array by lastName (alphabetically) and log it.
 10. Sort the array by age (numerically) and log it.
+11. Using .reduce return an object containing two arrays, one of them only with male students the other with female
 
 _As always any questions or struggles please contact us, ask us at class or send us an email, this homework is very important and we expect a large percentage of you to finish it_
 
-\_\_The due date for this homework is the **24th of February** \_ \_
+_The due date for this homework is the **24th of February**_
