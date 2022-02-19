@@ -18,7 +18,15 @@ function Academy (name, start, end, subjects, students = []) {
     }
 }
 
- 
+// test (not part of the exercise)
+// this.numberOfClasses = ((subjects) => {
+//     if(!Array.isArray(subjects)) {
+//         throw new Error('subjects property should be of type array')
+//     }
+//     return subjects.length * 10;
+// })(this.subjects) // Array.isArray(subjects) && this.subjects.length * 10;
+
+
 function Subject (title, isElective, academy = {}, students) {
     this.title = title;
     this.numberOfClasses = 10;
