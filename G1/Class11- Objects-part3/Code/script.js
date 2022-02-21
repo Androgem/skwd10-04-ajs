@@ -168,28 +168,28 @@ programmer1.describe();
  * Poly: Many / Morph: Form
  */
 
-class Animal {
-  constructor(name) {
-    this.name = name;
-  }
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
 
-  makeSound() {
-    console.log('Generic Animal Sound');
-  }
-}
+//   makeSound() {
+//     console.log('Generic Animal Sound');
+//   }
+// }
 
-class Dog extends Animal {
-  constructor(name) {
-    super(name);
-  }
+// class Dog extends Animal {
+//   constructor(name) {
+//     super(name);
+//   }
 
-  makeSound() {
-    console.log('Woof woof..');
-  }
-}
+//   makeSound() {
+//     console.log('Woof woof..');
+//   }
+// }
 
-const a1 = new Animal('Dom');
-const a2 = new Dog('Snoopy');
+// const a1 = new Animal('Dom');
+// const a2 = new Dog('Snoopy');
 
 class Vehicle {
   constructor(id, name, batch, price) {
@@ -263,8 +263,6 @@ class Boat extends WaterVehicle {
 }
 
 const b1 = new Boat(50, 'Brodot Na Klime', 'B57', 99999, 2, false);
-
-console.log(b1.printVehicle());
 
 const c1 = new Car(55, 'Benz', 'B53', 9999, 4, 2);
 
