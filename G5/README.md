@@ -34,5 +34,5 @@ This repository will contain every piece of material about the subject. It will 
 
 ## Contact
 
-* Trainer: trainer@mail.com
-* Assistant: assistant@mail.com
+* Aleksandar Manasiev : a@manasiev.dev
+* George Dimitrov : dimitrov.gjorge@protonmail.com
