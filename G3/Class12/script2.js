@@ -107,7 +107,10 @@ console.log(electricCar.owner);
 
 console.log(electricCar.something);
 
-
+console.log('CHECKING TYPE OF OBJECT =============================================');
+let isElectricCar = electricCar instanceof ElectricCar;
+console.log(isElectricCar)
+console.log('CHECKING TYPE OF OBJECT =============================================');
 
 class Helpers {
     static printArray(arr) {
@@ -131,3 +134,15 @@ class Helpers {
 Helpers.printArray([1, 2, 3, 4]);
 Helpers.printString('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
 console.log(Helpers.countAllVowelsInString('abcedgipoasdu'));
+
+console.log('CHECKING TYPE OF OBJECT =============================================');
+let isElectricCar1 = electricCar instanceof Helpers;
+console.log(isElectricCar1)
+console.log('CHECKING TYPE OF OBJECT =============================================');
+
+function checkIfElectric(input) {
+    if (input instanceof ElectricCar) {
+        // do something
+    }
+    return electric instanceof ElectricCar;
+}
