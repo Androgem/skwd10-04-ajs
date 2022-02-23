@@ -40,10 +40,24 @@ class Car extends WheeledVehicle {
             this.price += 400;
         }
     }
+
+    static addAc(car) {
+        if (!car.ac) {
+            car.ac = true;
+            car.price += 400;
+            console.log(`The car has AC now and it costs ${car.price}`);
+        } else {
+            console.log('The car already has AC');
+        }
+    }
 }
 
 let car = new Car(3, 'Fico', 'AZ1', 200, 4, 2, true);
 console.log(car);
+console.log('=--------------------------')
+Car.addAc(car);
+console.log('=--------------------------')
+
 
 class ElectricCar extends Car {
     constructor(id, name, batch, price, wheels, doors, owner) {
@@ -92,3 +106,28 @@ electricCar.owner = 'a';
 console.log(electricCar.owner);
 
 console.log(electricCar.something);
+
+
+
+class Helpers {
+    static printArray(arr) {
+        arr.forEach(element => {
+            console.log(element);
+        });
+    }
+
+    static printString(str) {
+        console.log(str);
+    }
+
+    static countAllVowelsInString(str) {
+        let strArr = str.split('');
+        let vowels = ['a', 'e', 'i', 'o', 'u'];
+        
+        return strArr.filter(char => vowels.includes(char.toLowerCase())).length;
+    }
+}
+
+Helpers.printArray([1, 2, 3, 4]);
+Helpers.printString('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+console.log(Helpers.countAllVowelsInString('abcedgipoasdu'));
