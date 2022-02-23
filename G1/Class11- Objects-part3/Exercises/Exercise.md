@@ -2,7 +2,7 @@ Exercise #1
 
 Create a class Animal that has:
 name
-type - carnivore/herbivore/omnivore
+type - carnivore/herbivore/omnivore //Mesojad // Trevojad // Seshtojad
 age
 size
 eat - a method that checks if the input is an Animal.
