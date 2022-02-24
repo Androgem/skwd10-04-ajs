@@ -31,9 +31,9 @@ class WheeldVehicle extends Vehicle {
 }
 
 const myVehicle = new WheeldVehicle(27, 'Car', 3242, 3000, 4);
-console.log(myVehicle);
+// console.log(myVehicle);
 
-console.log(myVehicle.changeTire());
+// console.log(myVehicle.changeTire());
 
 class Car extends WheeldVehicle {
     constructor(id, name, batch, price, doors, ac) {
@@ -54,4 +54,53 @@ class Car extends WheeldVehicle {
 const myCar = new Car(2, 'Peugeot', 213, 3000, 4, true);
 const myOtherVar = new Car(3, 'Tarabant', 213, 7, 4, false);
 
-Array.isArray(myOtherVar)
+// instanceof
+
+// console.log('myCar')
+// console.log(myCar instanceof Car)
+// console.log(myCar instanceof WheeldVehicle)
+// console.log(myCar instanceof Vehicle)
+// console.log('myVehicle')
+// console.log(myVehicle instanceof Car)
+// console.log(myVehicle instanceof WheeldVehicle)
+// console.log(myVehicle instanceof Vehicle)
+
+class ElectricCar extends Car {
+    // #owner;
+    constructor(id, name, batch, price, doors, ac, owner) {
+        super(id, name, batch, price, doors, ac);
+        // this.owner = owner;
+    }
+    get owner() {
+        return this._owner;
+    }
+    
+    set owner(val) {
+        this._owner = val.toUpperCase();
+    }
+//     get getPrivatePropertyValue() {
+//         console.log('We are getting the name of the owner. Please wait...')
+//         return `The car is owned by: ${this.#owner}`
+//     }
+}
+
+const em = new ElectricCar(5, 'Tesla', 324, 70000, 4, true, 'ElOn MuSk')
+em.owner = 'Elon Musk'
+console.log(em.owner)
+
+
+// class Human {
+//     constructor(firstName, lastName) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+//     get fullName() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
+
+// const me = new Human('Igor', 'Mitkovski')
+// me._firstName = 'Igor'
+// console.log(me.fullName)
+
+ 
