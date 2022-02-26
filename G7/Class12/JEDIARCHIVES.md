@@ -44,6 +44,6 @@ The web page should be:
 
 ## BONUS
 
-1. Use getters/setters to mutate the data of Mass and Gender fields in Person to be suffixed with cm/kg repsectively
+1. Use getters/setters to mutate the data of Height and Mass fields in Person to be suffixed with cm/kg repsectively
 2. Use getters/setters to muatate the data of Cost and Cargo Capacity in Ship to be shown as '1.000.000' instead of only digits example '1000000'
 
