@@ -1,0 +1,15 @@
+body {
+  background-image: url('./img/background1.png');
+}
+
+#pages .page {
+  display: none;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+#pages .page:first-child {
+  display: block;
+}
