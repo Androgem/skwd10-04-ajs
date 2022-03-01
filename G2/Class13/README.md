@@ -1,4 +1,4 @@
-# Counrtipedia
+# Countrypedia
 ## We want to create an app for searching through countries
  
 Our app should use the [rest countries API](https://restcountries.com/v3.1/all). It should use
