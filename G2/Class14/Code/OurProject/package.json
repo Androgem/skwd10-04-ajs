@@ -1,0 +1,14 @@
+{
+  "name": "ourproject",
+  "version": "1.0.0",
+  "description": "This is our first project using npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SEDC",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
