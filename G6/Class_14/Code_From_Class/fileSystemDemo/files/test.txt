@@ -1,0 +1,2 @@
+This is created automatically by writeFileSync! 
+This is added automaticaly by appendFileSync!
