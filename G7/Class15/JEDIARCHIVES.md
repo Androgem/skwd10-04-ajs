@@ -48,7 +48,7 @@ The web page should be:
 1. Use getters/setters to mutate the data of Height and Mass fields in Person to be suffixed with cm/kg repsectively
 2. Use getters/setters to muatate the data of Cost and Cargo Capacity in Ship to be shown as '1.000.000' instead of only digits example '1000000'
 
-3. Add a click event for each Person/Starship in the table that will open a page with all the details for that person/Starship (for people include the details for that person's homeworld)
+3. Add a click event for each Person/Starship in the table that will create a new HTML element (list or table) and display it with all the details for that person/Starship (for people include the details for that person's homeworld)
   * Create a static function on the Person class that will accept a Person object and call an endpoint to retrieve that person's homeworld data (the static function needs to check if it's getting a valid Person object or else it should throw a descriptive error)
   * Create a Planet class to store all the necessary data for the homeworld
   * Planet
